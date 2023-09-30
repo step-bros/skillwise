@@ -6,6 +6,7 @@ target/
 
 ## ENVIRONMENT VARIABLES
 .env
+.environment
 
 ### STS ###
 .apt_generated
