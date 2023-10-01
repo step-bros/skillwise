@@ -41,6 +41,14 @@ public class SkillwiseApplication {
 					"assets/thumbnails/flutter.png",
 					40);
 
+			CourseEntity supplyChainManagementCourse = new CourseEntity(
+					2,
+					"Supply Chain Management",
+					"This course will help familiarise you with the Supply Chain industry.",
+					"assets/logos/coursera.svg",
+					"assets/thumbnails/supplychain.png",
+					60);
+
 			StudentEntity student = new StudentEntity(
 					0,
 					"Darrick"
@@ -48,6 +56,7 @@ public class SkillwiseApplication {
 
 			courseRepository.save(webDevelopmentBootCampCourse);
 			courseRepository.save(flutterFirebaseCourse);
+			courseRepository.save(supplyChainManagementCourse);
 
 			studentRepository.save(student);
 

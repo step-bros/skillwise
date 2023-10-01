@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @ResponseBody
 public class StudentController {
@@ -21,11 +22,13 @@ public class StudentController {
         this.courseRepository = courseRepository;
     }
 
+    @CrossOrigin
     @GetMapping(path="student/{name}")
     StudentEntity getStudent(@PathVariable String name) {
         return studentRepository.findByName(name);
     }
 
+    @CrossOrigin
     @GetMapping(path = "student/{studentName}/courses")
     List<CourseEntity> getStudentCourses(@PathVariable String studentName){
         StudentEntity studentEntity = studentRepository.findByName(studentName);
@@ -35,6 +38,7 @@ public class StudentController {
         }).toList());
     }
 
+    @CrossOrigin
     @GetMapping(path="student/{studentName}/progress")
     Integer getStudentCourseProgress(@PathVariable String studentName, @RequestParam String courseName)
     {
