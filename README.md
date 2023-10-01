@@ -25,7 +25,7 @@ cd spring-boot-project
 ```
 To run the project, execute the following command:
 ```
-mvn spring-boot:run
+./mvnw spring-boot:run
 ```
 
 The project will start running on port 8080 by default. You can access the application in your web browser at http://localhost:8080.
