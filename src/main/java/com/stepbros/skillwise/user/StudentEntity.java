@@ -19,15 +19,22 @@ public class StudentEntity {
     @Id
     @Column(name = "id")
     Integer id;
+
+    public StudentEntity(Integer id, String name, Integer streak, Integer gold) {
+        this.id = id;
+        this.name = name;
+        this.streak = streak;
+        this.gold = gold;
+    }
+
     @Column(name = "name")
     String name;
+    @Column(name = "streak")
+    Integer streak;
+    @Column(name = "gold")
+    Integer gold;
 
     @OneToMany(mappedBy = "student")
     @Transient
     private Set<CourseProgress> progresses;
-
-    public StudentEntity(Integer id, String name) {
-        this.id = id;
-        this.name = name;
-    }
 }

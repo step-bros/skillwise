@@ -1,5 +1,6 @@
-package com.stepbros.skillwise.courses;
+package com.stepbros.skillwise.reward;
 
+import com.stepbros.skillwise.courses.CourseEntity;
 import com.stepbros.skillwise.user.StudentEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -10,9 +11,9 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
-public class CourseProgress {
+@NoArgsConstructor
+public class RewardClaimed {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     Long id;
@@ -22,15 +23,11 @@ public class CourseProgress {
     StudentEntity student;
 
     @ManyToOne
-    @JoinColumn(name = "course_id")
-    CourseEntity course;
+    @JoinColumn(name = "reward_id")
+    RewardEntity reward;
 
-    @Column(name = "progress")
-    Integer progress;
-
-    public CourseProgress(StudentEntity student, CourseEntity course, Integer progress) {
+    public RewardClaimed(StudentEntity student, RewardEntity reward) {
         this.student = student;
-        this.course = course;
-        this.progress = progress;
+        this.reward = reward;
     }
 }
